@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<title>castor</title>
+<link rel="icon" type="image/png" href="2.png">
+
+<style>
+  body {
+     margin: 0;
+      font-family: Arial, sans-serif; 
+}
+  .navbar {
+     background-color: #1b0692;
+     overflow: hidden; 
+    }
+  .navbar a { float: left; 
+    display:  block;
+     color: white; 
+     text-align: center;
+      padding: 14px 20px; 
+      text-decoration: none; 
+    }
+  .navbar a:hover { 
+    background-color: #ddd; 
+    color: rgb(38, 42, 226);
+ }
+  .navbar a.active {
+     background-color: #1b0692;
+     color: white; 
+    }
+  .navbar-right {
+     float: right; 
+  }
+  .semicirculo {
+    margin: 0;
+    width: 100%;
+    height: 300px;
+    background-color: #090180;
+    border-radius: 0 0 150px 150px;
+  }
+  .br{
+    color: white;
+    position: absolute;
+    left: 500px;
+    bottom: 350px;
+  }
+  .registrar{
+    background-color: yellow;
+    border-radius: 30px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+  }
+  .dibujo{
+    position: absolute;
+    left: 200px;
+  }
+
+  .requirements{
+    position: absolute;
+    left: 200px;
+    bottom: 25px;
+    width: 300px;
+  }
+
+ 
+  .requirements h2 { 
+    color: #1b1a1a; }
+  .requirements ul { 
+    list-style-type: 
+    none; padding: 0; }
+  .requirements li {
+     margin-bottom: 10px; 
+     font-size: 16px; 
+    line-height: 1.5;
+     position: relative;
+      padding-left: 30px; }
+  .requirements li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #4CAF50;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  footer{
+    position: absolute;
+    top: 650px;
+    width: 100%;
+    height: 100px;
+    background-color: #ddd;
+    text-align: center;
+  }
+ 
+  
+  
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="registrarse.html" class="active"><img src="2.png" alt="" height="30px"></a>
+  <div class="navbar-right">
+    <a href="ingresar.html">Iniciar Sesión</a>
+    <a class="registrar" style="color: #090180;" href="registrarse.html" >Registrar</a>
+  </div>
+</div>
+<div class="semicirculo"> </div>
+<div class="br">
+    <h3>Únete a más de 9,000 personas buscando empleo <br>
+         y más de 2,000 personas buscando</h3>
+</div>
+<center>
+    <h1> unete a castor y encuentra las oportunidades que te impulsan</h1>
+</center>
+<div class="dibujo">
+    <img src="imagen de castor.png" height="200px">
+    <div class="requirements">
+        <h2>Requisitos para Abrir una Cuenta Bancaria</h2>
+        <ul>
+          <li>Documento de identidad vigente</li>
+          <li>Comprobante de domicilio reciente</li>
+          <li>Certificación de ingresos</li>
+        </ul>
+      </div>
+
+</div>
+
+<div><footer><p>©2024 castor.com  todos los derechos reservados</p>
+  <br>
+  <img src="2.png" height="30px" style="position: absolute;top: 50px; left: 600px;">
+  </footer>
+</div>
+
+
+</body>
+</html>
