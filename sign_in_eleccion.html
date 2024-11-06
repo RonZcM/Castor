@@ -29,11 +29,64 @@
 
     <style>
 
-      .adaptando{
-
-        /*Pon aquí tus estilos*/
-      
+      body{
+        background-color: #090180;
       }
+
+      .adaptando{
+        
+        .container {
+      text-align: center;
+      margin-bottom: 30%;
+    }
+
+    .title {
+      font-size: 2em;
+      margin-bottom: 10%;
+      color: #ffffff;
+    }
+
+    .option-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .option {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 200px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .option img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: white;
+      background-color: #f5c909;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0d10df;
+    }
+
+          }
 
     </style>
 
@@ -44,23 +97,13 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="main.html" class="logo d-flex align-items-center me-auto">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/castor_logo.png" alt="logo">
         <!--<h1 class="sitename">Arsha</h1>-->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="mis_postulaciones.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg-fill" viewBox="0 0 16 16" style="color: rgb(187, 179, 179) ; ">
-            <path d="M7 0a2 2 0 0 0-2 2H1.5A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14H2a.5.5 0 0 0 1 0h10a.5.5 0 0 0 1 0h.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2H11a2 2 0 0 0-2-2zM6 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zM3 13V3h1v10zm9 0V3h1v10z"/>
-          </svg>Mis Postulaciones</a></li>
-      <li><a href="notificaciones.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" style="color:yellow;">
-        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
-      </svg>Notificaciones</a></li>
-      <li><a href="perfil-postulante.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: red;">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-      </svg>Perfil</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -69,20 +112,35 @@
 
   <main class="main">
 
-    <!-- Starter Section Section -->
-    <section id="starter-section" class="starter-section section"> <!-- Podés eliminar esto si no te gusta como queda -->
 
       <div class="container" data-aos="fade-up"> <!-- Esto es para centrar el contenido -->
         
         <div class="adaptando">
 
-        <!-- Pon aquí tu codigo -->
+          <div class="container">
+            <h1 class="title">¿Cómo deseas registrarte?</h1>
+            <div class="option-container">
+              
+              <!-- Opción de Postulante -->
+              <div class="option">
+                <img src="assets/img/postulante.png" alt="Postulante">
+                <p>Registrarme como Postulante</p>
+                <a href="sign_in_postulante.html" class="btn">Seleccionar</a>
+              </div>
+        
+              <!-- Opción de Contratista -->
+              <div class="option">
+                <img src="assets/img/contratista.png" alt="Contratista">
+                <p>Registrarme como Contratista</p>
+                <a href="sign_in_contratista.html" class="btn">Seleccionar</a>
+              </div>
+            </div>
+          </div>
+            </div>
 
-        </div>
+          </div>
 
       </div>
-
-    </section><!-- /Starter Section Section -->
 
   </main>
 
@@ -104,20 +162,20 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Enlaces Útiles</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#">Inicio</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">Sobre Nosotros</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Servicios</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#pricing">Precios</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#">Inicio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">Sobre Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Servicios</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#pricing">Precios</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Nuestros Servicios</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Publicación de Trabajos</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Búsqueda de Talento</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Promoción de Vacantes</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Consultoría Laboral</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Publicación de Trabajos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Búsqueda de Talento</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Promoción de Vacantes</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Consultoría Laboral</a></li>
           </ul>
         </div>
 

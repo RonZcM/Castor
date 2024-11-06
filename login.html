@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Login Castor</title>
+  <title>Castor</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/castor_logo.png" rel="icon">
+  <link href="assets/img/castor_logo.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -44,33 +44,11 @@
       font-size: 1.2rem;
       padding: 0.75rem;
     }
-    .mensaje-error {
-      display: none; 
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      border: 2px solid #f00;
-      border-radius: 8px;
-      background-color: #ffe6e6;
-      color: #f00;
-      font-size: 18px;
-      text-align: center;
-      z-index: 1000;
-      width: 80%;
-      max-width: 300px;
-    }
-    .cerrar {
-      margin-top: 15px;
-      background-color: #f00;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      cursor: pointer;
-      font-size: 14px;
-      border-radius: 5px;
-    }
+    .errorMsg {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
   </style>
 </head>
 
@@ -87,33 +65,23 @@
       <div class="col-lg-6 d-flex justify-content-center">
         <div class="card p-4 login-card">
           <h3 class="text-center mb-4">Iniciar Sesión</h3>
-          <form>
+          <form id="loginForm">
             <!-- Campo de Email -->
             <div class="mb-3">
-              <label for="email" class="form-label" >Correo Electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required>
+              <label for="email" class="form-label" >Usuario</label>
+              <input type="text" class="form-control"id="nick" placeholder="Nombre de Usuario" required>
             </div>
             
             <!-- Campo de Contraseña -->
             <div class="mb-3">
               <label for="password" class="form-label" >Contraseña</label>
-              <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+              <p id="errorMsg" class="errorMsg"></p>
             </div>
             
             <!-- Botón de Login -->
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary" id="ingresar">Ingresar</button>
-            </div>
-            
-            <!-- Enlace de Recuperación de Contraseña -->
-            <div class="text-center mt-3">
-              <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-            <!-- Contenedor para el mensaje de error -->
-            <div id="mensaje-error" class="mensaje-error">
-              Por favor, completa todos los campos.
-              <br>
-              <button class="cerrar" onclick="cerrarMensaje()">Cerrar</button>
+              <button type="button" class="btn btn-primary"  onclick="iniciarSesion()">Iniciar Sesión</button>
             </div>
           </form>
         </div>
@@ -121,24 +89,44 @@
     </div>
   </main>
   <script>
-          function cerrarMensaje() {
-          document.getElementById("mensaje-error").style.display = 'none';
-          }
+          // Función para iniciar sesión
+          function iniciarSesion() {
+              // Obtener valores del formulario
+              const nickInput = document.getElementById('nick').value.trim();
+              const passwordInput = document.getElementById('password').value.trim();
+              const errorMsg = document.getElementById('errorMsg');
 
-          document.getElementById('ingresar').addEventListener('click', () => {
-            event.preventDefault(); 
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-          const mensajeError = document.getElementById("mensaje-error");
-  
-          if (email === '' || password === '') {
-            mensajeError.style.display = 'block';
-              return;
-          }
-          mensajeError.style.display = 'none';
-          window.location.href = 'vista_contratista/main_post.html';
+              // Obtener datos de registro del localStorage
+              const postulanteData = JSON.parse(localStorage.getItem('postulanteData'));
+              const contratistaData = JSON.parse(localStorage.getItem('contratistaData'));
 
-      });
+              
+              // Validar que no haya campos vacíos
+              if (nickInput == "" || passwordInput == "") {
+                  errorMsg.textContent = "Por favor, complete todos los campos.";
+              }
+
+              else {
+
+                // Verificar si los datos coinciden con los de un postulante
+              if (postulanteData && postulanteData.nick === nickInput && postulanteData.password === passwordInput) {
+                  // Redirigir al perfil de postulante si el login es exitoso
+                  window.location.href = "./vista_postulante/main.html";
+              } 
+              // Verificar si los datos coinciden con los de un contratista
+              else if (contratistaData && contratistaData.username === nickInput && contratistaData.password === passwordInput) {
+                  // Redirigir al perfil de contratista si el login es exitoso
+                  window.location.href = "./vista_contratista/main_post.html";
+              } 
+              else {
+                  // Mostrar mensaje de error si los datos no coinciden
+                  errorMsg.textContent = "Nombre de usuario o contraseña incorrectos.";
+              }
+
+              }
+
+              
+          }
   </script>
 
 
