@@ -30,38 +30,30 @@
     <style>
 
       body{
-        background-color: #090180;
-      }
-
-      .adaptando{
+            background-color: #090180;
+          }
+      .adaptando{   
         
-        .conteniendo_login{
-          font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 5%;
         }
 
-         /* Contenedor del login */
-         #loginContainer {
+        /* Contenedor de registro */
+        #registroContainer {
             background-color: #ffffff;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
-            text-align: center;
+            max-width: 100%;
+            margin-bottom: 10%;
         }
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
 
         /* Campos de entrada */
-        input[type="text"], input[type="password"] {
+        input[type="text"], input[type="password"], input[type="file"], select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -70,8 +62,26 @@
             font-size: 16px;
         }
 
-        /* Botón de login */
-        .loginBtn {
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #555;
+        }
+
+        /* Botón de registro */
+        .registerBtn {
             width: 100%;
             padding: 10px;
             background-color: #4CAF50;
@@ -83,7 +93,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .loginBtn:hover {
+        .registerBtn:hover {
             background-color: #45a049;
         }
 
@@ -94,7 +104,7 @@
             margin-top: 10px;
         }
 
-          }
+        }
 
     </style>
 
@@ -102,7 +112,7 @@
 
 <body class="starter-page-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" style="background-color: transparent;" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -125,66 +135,121 @@
         
         <div class="adaptando">
 
-          <div class="conteniendo_login">
-          <div id="loginContainer">
-            <h2>Iniciar Sesión</h2>
+          <h1>Registro de Contratista</h1>
+
+          <div id="registroContainer">
             
-            <form id="loginForm">
-                <input type="text" id="nick" placeholder="Nombre de Usuario" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
+            <form id="contratistaForm">
+                <label>Nombre de Usuario:</label>
+                <input type="text" id="username" required>
+
+                <label>Nombre Completo:</label>
+                <input type="text" id="nombreCompleto"  required>
+
+                <label>Nombre de Empresa/Negocio:</label>
+                <input type="text" id="nombreEmpresa"  required>
+
+                <label>Descripción:</label>
+                <textarea id="descripcion" required rows="3"></textarea>
+                
+                <label>Área laboral:</label>
+                <select id="areaLaboral" required>
+                    <option value="">Seleccione un área</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Construcción">Construcción</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Finanzas">Finanzas</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Otros">Otros</option>
+                </select>
+
+                <label>Dirección:</label>
+                <input type="text" id="direccion"  required>
+
+                <label>Razón Social:</label>
+                <input type="text" id="razonSocial" required>
+
+                <label>Código Postal:</label>
+                <input type="text" id="codigoPostal" required>
+                
+                <label>Foto de Perfil</label>
+                <input type="file" id="fotoPerfil" accept="image/*" required>
+    
+                <label>Contraseña:</label>
+                <input type="password" id="password" required>
+
+                <label>Confirmar Contraseña:</label>
+                <input type="password" id="confirmPassword" required>
+                
+                <button type="button" class="registerBtn" onclick="registrarContratista()">Registrar</button>
                 <p id="errorMsg" class="errorMsg"></p>
-
-
-                <button type="button" class="loginBtn" onclick="iniciarSesion()">Iniciar Sesión</button>
             </form>
         </div>
-
+    
         <script>
-          // Función para iniciar sesión
-          function iniciarSesion() {
-              // Obtener valores del formulario
-              const nickInput = document.getElementById('nick').value.trim();
-              const passwordInput = document.getElementById('password').value.trim();
-              const errorMsg = document.getElementById('errorMsg');
-
-              // Obtener datos de registro del localStorage
-              const postulanteData = JSON.parse(localStorage.getItem('postulanteData'));
-              const contratistaData = JSON.parse(localStorage.getItem('contratistaData'));
-
-              
-              // Validar que no haya campos vacíos
-              if (nickInput == "" || passwordInput == "") {
-                  errorMsg.textContent = "Por favor, complete todos los campos.";
-              }
-
-              else {
-
-                // Verificar si los datos coinciden con los de un postulante
-              if (postulanteData && postulanteData.nick === nickInput && postulanteData.password === passwordInput) {
-                  // Redirigir al perfil de postulante si el login es exitoso
-                  window.location.href = "perfil-postulante.html";
-              } 
-              // Verificar si los datos coinciden con los de un contratista
-              else if (contratistaData && contratistaData.username === nickInput && contratistaData.password === passwordInput) {
-                  // Redirigir al perfil de contratista si el login es exitoso
-                  window.location.href = "perfil-contratista.html";
-              } 
-              else {
-                  // Mostrar mensaje de error si los datos no coinciden
-                  errorMsg.textContent = "Nombre de usuario o contraseña incorrectos.";
-              }
-
-              }
-
-              
-          }
+            // Función para registrar el contratista
+            function registrarContratista() {
+                // Obtener valores de los campos
+                const username = document.getElementById('username').value.trim();
+                const nombreCompleto = document.getElementById('nombreCompleto').value.trim();
+                const nombreEmpresa = document.getElementById('nombreEmpresa').value.trim();
+                const descripcion = document.getElementById('descripcion').value.trim();
+                const areaLaboral = document.getElementById('areaLaboral').value;
+                const direccion = document.getElementById('direccion').value.trim();
+                const razonSocial = document.getElementById('razonSocial').value.trim();
+                const codigoPostal = document.getElementById('codigoPostal').value.trim();
+                const fotoPerfil = document.getElementById('fotoPerfil').files[0];
+                const password = document.getElementById('password').value.trim();
+                const confirmPassword = document.getElementById('confirmPassword').value.trim();
+                const errorMsg = document.getElementById('errorMsg');
+    
+                // Validar que no haya campos vacíos
+                if (!username || !nombreCompleto || !nombreEmpresa || !areaLaboral || !direccion || !razonSocial || !codigoPostal || !fotoPerfil || !password || !confirmPassword) {
+                    errorMsg.textContent = "Por favor, complete todos los campos.";
+                    return;
+                }
+    
+                // Validar que las contraseñas coincidan
+                if (password !== confirmPassword) {
+                    errorMsg.textContent = "Las contraseñas no coinciden.";
+                    return;
+                }
+    
+                // Crear un objeto para guardar los datos
+                const contratistaData = {
+                    username,
+                    nombreCompleto,
+                    nombreEmpresa,
+                    descripcion,
+                    areaLaboral,
+                    direccion,
+                    razonSocial,
+                    codigoPostal,
+                    password
+                };
+    
+                // Guardar la imagen de perfil en base64
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    contratistaData.fotoPerfil = e.target.result;
+    
+                    // Guardar datos en localStorage
+                    localStorage.setItem('contratistaData', JSON.stringify(contratistaData));
+    
+                    // Confirmación y redirección
+                    alert("Registro exitoso. ¡Bienvenido!");
+                    window.location.href = "perfil-contratista.html"; // Redirige a la página de perfil
+                };
+                reader.readAsDataURL(fotoPerfil);
+            }
         </script>
-
-            </div>
-
-          </div>
+        </div>
 
       </div>
+
 
   </main>
 

@@ -35,43 +35,48 @@
 
       .adaptando{
         
-        .conteniendo_login{
-          font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 5%;
         }
 
-         /* Contenedor del login */
-         #loginContainer {
+        /* Estilos del formulario */
+        #registroForm {
             background-color: #ffffff;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
-            text-align: center;
+            max-width: 100%px;
+            margin-bottom: 10%;
         }
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #555;
         }
 
-        /* Campos de entrada */
-        input[type="text"], input[type="password"] {
-            width: 100%;
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"], 
+        input[type="file"], 
+        input[type="password"],
+        textarea {
+            width: calc(100% - 20px);
             padding: 10px;
-            margin: 10px 0;
+            margin-top: 5px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
+            box-sizing: border-box;
         }
 
-        /* Botón de login */
-        .loginBtn {
+        /* Botón de registro */
+        button {
             width: 100%;
             padding: 10px;
             background-color: #4CAF50;
@@ -83,17 +88,30 @@
             transition: background-color 0.3s ease;
         }
 
-        .loginBtn:hover {
+        button:hover {
             background-color: #45a049;
         }
 
         /* Mensaje de error */
-        .errorMsg {
+        .error {
             color: red;
             font-size: 14px;
-            margin-top: 10px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
         }
 
+        /* Responsivo */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            #registroForm {
+                width: 100%;
+                padding: 15px;
+            }
+            }
           }
 
     </style>
@@ -125,62 +143,128 @@
         
         <div class="adaptando">
 
-          <div class="conteniendo_login">
-          <div id="loginContainer">
-            <h2>Iniciar Sesión</h2>
-            
-            <form id="loginForm">
-                <input type="text" id="nick" placeholder="Nombre de Usuario" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <p id="errorMsg" class="errorMsg"></p>
+          <h1>Registro de Postulante</h1>
+    <form id="registroForm">
+        <label>Nombre de Usuario:</label>
+        <input type="text" id="nick" required>
 
+        <label>Nombre Completo:</label>
+        <input type="text" id="nombreCompleto" required>
 
-                <button type="button" class="loginBtn" onclick="iniciarSesion()">Iniciar Sesión</button>
-            </form>
-        </div>
+        <label>Descripción:</label>
+        <textarea id="descripcion" required rows="3"></textarea>
 
-        <script>
-          // Función para iniciar sesión
-          function iniciarSesion() {
-              // Obtener valores del formulario
-              const nickInput = document.getElementById('nick').value.trim();
-              const passwordInput = document.getElementById('password').value.trim();
-              const errorMsg = document.getElementById('errorMsg');
+        <label>Email:</label>
+        <input type="email" id="email" required>
 
-              // Obtener datos de registro del localStorage
-              const postulanteData = JSON.parse(localStorage.getItem('postulanteData'));
-              const contratistaData = JSON.parse(localStorage.getItem('contratistaData'));
+        <label>Teléfono:</label>
+        <input type="tel" id="telefono" required>
 
-              
-              // Validar que no haya campos vacíos
-              if (nickInput == "" || passwordInput == "") {
-                  errorMsg.textContent = "Por favor, complete todos los campos.";
-              }
+        <label>Dirección:</label>
+        <input type="text" id="direccion" required>
 
-              else {
+        <label>Área Laboral:</label>
+        <select id="areaLaboral" required>
+            <option value="">Seleccione un área</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Construcción">Construcción</option>
+            <option value="Ventas">Ventas</option>
+            <option value="Educación">Educación</option>
+            <option value="Salud">Salud</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Atención al Cliente">Atención al Cliente</option>
+            <option value="Administración">Administración</option>
+            <option value="Otros">Otros</option>
+        </select>
 
-                // Verificar si los datos coinciden con los de un postulante
-              if (postulanteData && postulanteData.nick === nickInput && postulanteData.password === passwordInput) {
-                  // Redirigir al perfil de postulante si el login es exitoso
-                  window.location.href = "perfil-postulante.html";
-              } 
-              // Verificar si los datos coinciden con los de un contratista
-              else if (contratistaData && contratistaData.username === nickInput && contratistaData.password === passwordInput) {
-                  // Redirigir al perfil de contratista si el login es exitoso
-                  window.location.href = "perfil-contratista.html";
-              } 
-              else {
-                  // Mostrar mensaje de error si los datos no coinciden
-                  errorMsg.textContent = "Nombre de usuario o contraseña incorrectos.";
-              }
+        <label>Contraseña:</label>
+        <input type="password" id="password" required>
 
-              }
+        <label>Confirmar Contraseña:</label>
+        <input type="password" id="confirmPassword" required>
+        <div id="passwordError" class="error">Las contraseñas no coinciden.</div>
 
-              
-          }
-        </script>
+        <label>Foto de Perfil:</label>
+        <input type="file" id="fotoPerfil" accept="image/*" required>
 
-            </div>
+        <label>Currículum Vitae (PDF):</label>
+        <input type="file" id="cv" accept=".pdf" required>
+
+        <button type="button" onclick="guardarDatos()">Registrar</button>
+    </form>
+
+    <script>
+        function validarCampos() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const passwordError = document.getElementById('passwordError');
+
+            // Validar que las contraseñas coincidan
+            if (password !== confirmPassword) {
+                passwordError.style.display = 'block';
+                return false;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            // Validar que todos los campos estén llenos
+            const inputs = document.querySelectorAll('#registroForm input[required], #registroForm textarea[required], #registroForm select[required]');
+            for (let input of inputs) {
+                if (!input.value) {
+                    alert("Por favor, completa todos los campos.");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function guardarDatos() {
+            if (!validarCampos()) return;
+
+            const nick = document.getElementById('nick').value;
+            const nombreCompleto = document.getElementById('nombreCompleto').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const direccion = document.getElementById('direccion').value;
+            const areaLaboral = document.getElementById('areaLaboral').value;
+            const password = document.getElementById('password').value;
+
+            const fotoPerfilInput = document.getElementById('fotoPerfil');
+            const fotoPerfilFile = fotoPerfilInput.files[0];
+            const readerFoto = new FileReader();
+            readerFoto.readAsDataURL(fotoPerfilFile);
+            readerFoto.onload = () => {
+                const fotoPerfil = readerFoto.result;
+
+                const cvInput = document.getElementById('cv');
+                const cvFile = cvInput.files[0];
+                const readerCV = new FileReader();
+                readerCV.readAsDataURL(cvFile);
+                readerCV.onload = () => {
+                    const cv = readerCV.result;
+
+                    const postulanteData = {
+                        nick,
+                        nombreCompleto,
+                        descripcion,
+                        email,
+                        telefono,
+                        direccion,
+                        areaLaboral,
+                        password,
+                        fotoPerfil,
+                        cv
+                    };
+
+                    localStorage.setItem('postulanteData', JSON.stringify(postulanteData));
+                    alert('Datos registrados exitosamente.');
+                    window.location.href = "perfil-postulante.html"
+                };
+            };
+        }
+    </script>
+
 
           </div>
 

@@ -27,6 +27,115 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+    <style>
+
+      .adaptando{
+
+        
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        
+
+        /* Contenedor de perfil */
+        #perfilContainer {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos de la foto de perfil */
+        .fotoPerfil {
+            display: block;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Datos de la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        th {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-danger {
+      background-color: #d60a1e;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #48be11;
+      color: white;
+    }
+      }
+
+    </style>
+
 </head>
 
 <body class="starter-page-page">
@@ -59,274 +168,171 @@
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container">
-        <h1>Mi Perfil</h1>
-      </div>
-    </div><!-- End Page Title -->
+      <div class="container" data-aos="fade-up"> <!-- Esto es para centrar el contenido -->
+        
+        <div class="adaptando">
 
-    <!-- Starter Section Section -->
-    <section id="starter-section" class="starter-section section">
+          <div id="perfilContainer">
+            <h2>Mi Perfil - Contratista</h2>
+            <img id="fotoPerfil" class="fotoPerfil" src="" alt="Foto de Perfil">
 
-    <style>
-      .container_perfil {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Main_Perfil Info Info"
-          "Redes Postulaciones Postulaciones"
-          "Habilidades Postulaciones Postulaciones";
-      }
-      
-      .Info {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Nombre Nombre Nombre"
-          "Email Email Email"
-          "Tel Tel Tel"
-          "Direccion Direccion Direccion"
-          "Area Area Area"
-          "espacio espacio espacio";
-        grid-area: Info;
-      }
-      
-      .Nombre { grid-area: Nombre;
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-        }
-      
-      .Email { grid-area: Email; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Tel { grid-area: Tel; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Direccion { grid-area: Direccion; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Area { grid-area: Area; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .espacio { grid-area: espacio; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Postulaciones {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.4fr 1.2fr 1.2fr 1.2fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Titulo_postulaciones Titulo_postulaciones Titulo_postulaciones"
-          "Postulacion_row_1 Postulacion_row_1 Postulacion_row_1"
-          "Postulacion_row_2 Postulacion_row_2 Postulacion_row_2"
-          "Postulacion_row_3 Postulacion_row_3 Postulacion_row_3";
-        grid-area: Postulaciones;
-      }
-      
-      .Titulo_postulaciones { grid-area: Titulo_postulaciones; }
-      
-      .Postulacion_row_1 { grid-area: Postulacion_row_1; }
-      
-      .Postulacion_row_2 { grid-area: Postulacion_row_2; }
-      
-      .Postulacion_row_3 { grid-area: Postulacion_row_3; }
-      
-      .Main_Perfil {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Foto_perfil Foto_perfil Foto_perfil"
-          "Foto_perfil Foto_perfil Foto_perfil"
-          "Descripción_perfil Descripción_perfil Descripción_perfil";
-        grid-area: Main_Perfil;
-      }
-      
-      .Foto_perfil { grid-area: Foto_perfil; }
-      
-      .Descripción_perfil { grid-area: Descripción_perfil; }
-      
-      .Redes {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
-        gap: 0px -2px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Whatsapp Whatsapp Whatsapp"
-          "GitHub GitHub GitHub"
-          "Facebook Facebook Facebook"
-          "Instagram Instagram Instagram"
-          "CV CV CV"
-          "empty empty empty";
-        grid-area: Redes;
-        margin-right: 60px;
-        margin-top: 5px;
-      }
+            <table>
+              <tr>
+                  <th>Usuario:</th>
+                  <td id="usuario"></td>
+              </tr>
+              <tr>
+                  <th>Nombre Completo:</th>
+                  <td id="nombreCompleto"></td>
+              </tr>
+              <tr>
+                  <th>Empresa/Negocio:</th>
+                  <td id="nombreEmpresa"></td>
+              </tr>
+              <tr>
+                <th>Descripción:</th>
+                <td id="descripcion"></td>
+              </tr>
+              <tr>
+                  <th>Área Laboral:</th>
+                  <td id="areaLaboral"></td>
+              </tr>
+              <tr>
+                  <th>Dirección:</th>
+                  <td id="direccion"></td>
+              </tr>
+              <tr>
+                  <th>Razón Social:</th>
+                  <td id="razonSocial"></td>
+              </tr>
+              <tr>
+                  <th>Código Postal:</th>
+                  <td id="codigoPostal"></td>
+              </tr>
+          </table>
 
-      .empty { grid-area: empty;
-        align-self: center;
-      }
-      
-      .CV { grid-area: CV; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-       }
-      
-      .Instagram { grid-area: Instagram; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Facebook { grid-area: Facebook; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .GitHub { grid-area: GitHub; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Whatsapp { grid-area: Whatsapp; 
-        border-style: solid;
-        border-color: rgb(134, 134, 134);
-      }
-      
-      .Habilidades {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.7fr 1.1fr 1.1fr 1.1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Habilidades-header Habilidades-header Habilidades-header"
-          ". . ."
-          ". . ."
-          ". . .";
-        grid-area: Habilidades;
-      }
-      
-      .Habilidades-header { grid-area: Habilidades-header; }
-    </style>      
-      
-      <div class="container">
-      <div class="container_perfil">
-        <div class="Info">
-          <div class="Nombre">Nombre Empresa: Carlita Cremita</div>
-          <div class="Email">E-mail: Carla.Fresa@itca.edu.sv</div>
-          <div class="Tel">Tel: +503 7288-5772</div>
-          <div class="Direccion">Dirección: Lot Las Victorias, Cantón Primavera, Santa Ana, El Salvador</div>
-          <div class="Area">Área: Comida</div>
-          <div class="espacio"><button>Editar</button></div>
-        </div>
-        <div class="Postulaciones">
-          <div style="margin-top: 40px;" class="Titulo_postulaciones"><h2>Mis publicaciones:</h2></div>
-          <div class="Postulacion_row_1"><img style="width: 170px;" src="./assets/img/portfolio/carlita_logo.jpg"" alt="pollo-campero"><b>Carlita Cremita | Cocinero: </b>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi suscipit voluptatem nesciunt ad dignissimos perferendis quas ab rem, esse a eaque magni odio quod libero aperiam, assumenda aspernatur! Consequatur, voluptatibus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae reiciendis molestiae illo dolor possimus ut atque, voluptatibus illum soluta, nisi veritatis. Eaque cupiditate facere cumque iste laboriosam quidem repellat reiciendis!</div>
-          <div class="Postulacion_row_2"><img style="width: 170px;" src="./assets/img/portfolio/carlita_logo.jpg"" alt="siman"><b>Carlita Cremita | Vendedor: </b>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas eaque facilis nihil eius assumenda? Perferendis iure mollitia laboriosam numquam! Nulla soluta minima quia, ab harum nemo assumenda blanditiis sit eveniet!Lorem</div>
-          <div class="Postulacion_row_3"><img style="width: 170px;" src="./assets/img/portfolio/carlita_logo.jpg" alt="carlita-fresita"><b>Carlita Cremita | Mesero: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt voluptatum dolorum suscipit vitae placeat maiores laudantium enim, dicta temporibus facere perferendis accusantium. Sit harum laborum animi rem voluptate optio at?Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fuga provident accusantium odit reiciendis hic corporis, aperiam nihil, ipsum delectus vero aspernatur quos repellat, expedita vitae illo voluptatibus perspiciatis nisi.</div>
-        </div>
-        <div class="Main_Perfil">
-          <div class="Foto_perfil"><img src="./assets/img/portfolio/carlita_logo.jpg" alt="foto-perfil" style="height: 85%; width: 65%; border-radius: 5%; border-style: outset; border-color: rgb(199, 157, 18);"></div>
-          <div class="Descripción_perfil"><b>Carlita Cremita</b><br><p>El negocio más conocido de El Salvador</p></div>
-        </div>
-        <div class="Redes">
-          <div class="empty">este espacio</div>
-          <div class="CV" style="text-indent: 10px;">Currículum: <a href="#">Ronaldo-Zec.pdf</a></div>
-          <div class="Instagram"> Instagram:<a href="Instagram.com">CarlitaCre</a></div>
-          <div class="Facebook"> Facebook: <a href="Facebook.com">Cremita Fresita</a></div>
-          <div class="GitHub"> GitHub: <a href="Github.com">Carla</a></div>
-          <div class="Whatsapp"> Whatsapp: +503 7288-5772</div>
-        </div>
-        <div class="Habilidades">
-        </div>
-      </div>
+           <!-- Botones de Cerrar Sesión y Borrar Cuenta -->
+            <button id="logoutBtn" onclick="cerrarSesion()" class="btn btn-warning" style="color: white;">Cerrar Sesión</button>
+            <button id="deleteAccountBtn" onclick="mostrarModal()" class="btn btn-danger">Borrar Cuenta</button>
+          </div>
 
+          <!-- Modal de confirmación -->
+          <div id="confirmModal" class="modal">
+            <div class="modal-content">
+              <p>¿Estás seguro de borrar tu cuenta de forma permanente?</p>
+              <div class="modal-buttons">
+                <button id="confirmYes" class="btn btn-danger" onclick="borrarCuenta()">Sí</button>
+                <button id="confirmNo" class="btn btn-secondary" onclick="cerrarModal()">No</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    
+        <script>
+
+                    // Función para cerrar sesión
+              function cerrarSesion() {
+                // Redirige al usuario a la página de inicio
+                window.location.href = "index.html";
+              }
+
+              // Función para mostrar el modal de confirmación
+              function mostrarModal() {
+                document.getElementById("confirmModal").style.display = "flex";
+              }
+
+              // Función para cerrar el modal de confirmación
+              function cerrarModal() {
+                document.getElementById("confirmModal").style.display = "none";
+              }
+
+              // Función para borrar la cuenta
+              function borrarCuenta() {
+                // Verifica el tipo de perfil actual y elimina los datos correspondientes
+                const contratistaData = JSON.parse(localStorage.getItem('contratistaData'));
+
+                // Elimina los datos según el tipo de perfil
+                if (contratistaData) {
+                  localStorage.removeItem('contratistaData');
+                }
+
+                // Redirige al usuario a la página de inicio después de borrar los datos
+                alert("Cuenta eliminada exitosamente.");
+                window.location.href = "index.html";
+              }
+  
+
+            // Función para cargar los datos del contratista
+            function cargarDatosContratista() {
+                const datosContratista = JSON.parse(localStorage.getItem('contratistaData'));
+                if (datosContratista) {
+                    // Asignar los valores a los elementos del perfil
+                    document.getElementById('usuario').textContent = datosContratista.username;
+                    document.getElementById('nombreCompleto').textContent = datosContratista.nombreCompleto;
+                    document.getElementById('nombreEmpresa').textContent = datosContratista.nombreEmpresa;
+                    document.getElementById('descripcion').textContent = datosContratista.descripcion;
+                    document.getElementById('areaLaboral').textContent = datosContratista.areaLaboral;
+                    document.getElementById('direccion').textContent = datosContratista.direccion;
+                    document.getElementById('razonSocial').textContent = datosContratista.razonSocial;
+                    document.getElementById('codigoPostal').textContent = datosContratista.codigoPostal;
+                    document.getElementById('fotoPerfil').src = datosContratista.fotoPerfil;
+                } else {
+                    alert("No se encontraron datos de perfil de contratista. Regístrese primero.");
+                    window.location.href = "registro-contratista.html"; // Redirige a la página de registro si no hay datos
+                }
+            }
+    
+            // Llamar a la función al cargar la página
+            window.onload = cargarDatosContratista;
+        </script>
+        </div>
 
       </div>
-      
-      </div>
-
-    </section><!-- /Starter Section Section -->
 
   </main>
 
   <footer id="footer" class="footer">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">Arsha</span>
+            <span class="sitename">Castor</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>Santa Ana, El Salvador</p>
+            <p><strong>Teléfono:</strong> <span>+503 2440 4348</span></p>
+            <p><strong>Email:</strong> <span>emprendetrabajo@gmail.com</span></p>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Enlaces Útiles</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#">Inicio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">Sobre Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Servicios</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#pricing">Precios</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Nuestros Servicios</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Publicación de Trabajos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Búsqueda de Talento</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Promoción de Vacantes</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Consultoría Laboral</a></li>
           </ul>
         </div>
 
         <div class="col-lg-4 col-md-12">
-          <h4>Follow Us</h4>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+          <h4>Síguenos</h4>
+          <p>Sigue nuestras redes sociales para conocer las últimas novedades en el mercado laboral.</p>
           <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/scq17BjHJqYov5G2/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/emprendetrabajo?igsh=MWZpajgyaDlza2tndg=="><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
@@ -334,17 +340,18 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Arsha</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Derechos Reservados</span> <strong class="px-1 sitename">EmprendeTrabajo</strong></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Diseñado por <a href="https://dontvegaa.github.io/PaginaWeb-CodeHaters/">CodeHaters</a>
       </div>
     </div>
+  </div>
 
-  </footer>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
