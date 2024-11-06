@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASTOR</title>
+    <link rel="icon" type="image/png" href="2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #112233;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #223344;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-column {
+            width: 30%;
+        }
+
+        .right-column {
+            width: 60%;
+        }
+
+        .profile-card {
+            background-color: #334455;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .profile-info {
+            font-size: 16px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .star {
+            color: #ffcc00;
+            font-size: 16px;
+        }
+
+        .right-column {
+            background-color: #223344;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 16px;
+        }
+
+        .contact-button {
+            background-color: #0080ff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-button {
+            background-color: #0080ff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .download-icon {
+            margin-right: 5px;
+        }
+
+        .download-link {
+            color: #ffffff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #112233;
+        }
+        
+  body{
+    background-color: #d7e3f4;
+  }
+    
+    .for{
+        background-color: rgb(14, 27, 104);
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        top: 54px;
+    }
+    .p{
+        background-color: rgb(14, 27, 104);
+        border-radius: 10px;
+        color: white;
+    }
+    .linea2{
+          position: absolute;
+          left: 100px;
+          bottom: 1760px;
+          border-left: 2px solid rgb(199, 29, 10);
+          height: 5px;
+          border: none;
+          background-color: lightcoral;
+          width: 350px;
+        }
+    
+        .lineaver{
+          position: absolute;
+          left: 720px;
+          bottom: -230px;
+          border: none;
+          width: 1px;
+          border-left: 2px solid rgb(32, 8, 121);
+          height: 700px;
+        }
+        .containr{
+          width: 300px;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" style="background-color: rgb(18, 8, 107);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="primcipal.html"> <img src="2.png" height="20px"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right" >
+          <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg-fill" viewBox="0 0 16 16" style="color: rgb(187, 179, 179) ; ">
+              <path d="M7 0a2 2 0 0 0-2 2H1.5A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14H2a.5.5 0 0 0 1 0h10a.5.5 0 0 0 1 0h.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2H11a2 2 0 0 0-2-2zM6 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zM3 13V3h1v10zm9 0V3h1v10z"/>
+            </svg> mis postulaciones</a></li>
+        <li><a href="priebaw.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" style="color:yellow;">
+          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+        </svg> notificaciones</a></li>
+        <li><a href="perfil.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: red;">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>  perfil</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div>
+  <div class="for">
+  <div class="pi" style="height: 50px; width: 700px; position: absolute; left: 300px; bottom: 10px;">
+           
+      <form class="navbar-form navbar-left" action="/action_page.php">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="motociclista">
+        </div>
+        <div class="form-group" style="width: 200px;">
+          <input type="text" class="form-control" placeholder="Santa Ana" style="width: 400px;">
+        </div>
+        <button class="btn btn-outline-success" type="button" style="position: absolute; left: 620px;">Search</button>
+      </form>
+    </div>   
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  
+ 
+  
+    <div  style="background-color: rgb(51, 50, 50); width: 220px; ">
+  
+      <nav class="navbar navbar-default" >
+        <div class="containr" >
+          
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+      
+        
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0">
+            <ul class="nav navbar-nav">
+              <li><a href="p.html" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Empleos</a></li>
+              <li><a href="#trabajadores" style="color: rgb(255, 255, 255); background-color: black;">Trabajadores</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    
+    
+  
+  </div>
+    <main class="content">
+        <div class="left-column">
+            <div class="profile-card">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Profile Picture" class="profile-picture">
+                <div class="profile-name">Alexandra vasquez    </div>
+                <div class="profile-info">Motosiclista: Santa Ana</div>
+                <div class="rating">
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="https://i.pravatar.cc/100" alt="Profile Picture" class="profile-picture">
+                <div class="profile-name">Raquel Munguia</div>
+                <div class="profile-info">Motosiclista: Santa Ana</div>
+                <div class="rating">
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="https://i.pravatar.cc/100" alt="Profile Picture" class="profile-picture">
+                <div class="profile-name">Nicol Leanos</div>
+                <div class="profile-info">Motosiclista: Santa Ana</div>
+                <div class="rating">
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="https://i.pravatar.cc/100" alt="Profile Picture" class="profile-picture">
+                <div class="profile-name">Marcela zepeda</div>
+                <div class="profile-info">Motosiclista: Santa Ana</div>
+                <div class="rating">
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                    <i class="star">★</i>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="profile-card">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Profile Picture" class="profile-picture">
+                <div class="profile-name">Alexandra vasquez </div>
+            </div>
+            <div class="section-title">Correo:</div>
+            <div class="section-content">gerardo.cortes32@gmail.com</div>
+            <div class="section-title">Telefono:</div>
+            <div class="section-content">+503 7626 7471</div>
+            <div class="section-title">Mis estudios</div>
+            <div class="section-content">Educación Técnico/Profesional</div>
+            <div class="section-content">instituto nacional cornelio azenon sierra</div>
+            <div class="section-content">Enero 2017 - Noviembre 2019</div>
+            <div class="section-title">Desplazamiento y movilidad</div>
+            <div class="section-content">- Disponibilidad para viajar</div>
+            <div class="section-content">- Disponibilidad para cambiar de residencia</div>
+            <div class="section-content">- No tengo vehículo propio</div>
+            <div class="section-title">Idiomas</div>
+            <div class="section-content">- Español</div>
+            <div class="section-content">- Ingles</div>
+            <button class="contact-button" onclick="otra()">Contactar</button>
+            <div class="section-title">Archivo adjunto</div>
+            <a href="" class="download-button">
+                <i class="download-icon"></i>
+                <span class="download-link">my_curriculum.pdf</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p> <img src="LOGOEM.png" alt="" height="30px"></p>
+    </footer>
+</body>
+
+<script>
+  function otra() {
+    location.href ="notificaciones 2.html";
+
+  }
+</script>
+</html>

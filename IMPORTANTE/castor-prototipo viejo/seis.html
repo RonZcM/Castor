@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Registro</title>
+<link rel="icon" type="image/png" href="2.png">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+  }
+  .iniciar {
+    background-color: rgb(7, 8, 97);
+    height: 500px;
+    width: 700px;
+    position: absolute;
+    left: 620px;
+    top: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  select {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 4px;
+  }
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  label {
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  input[type="submit"] {
+    width: 25%;
+    padding: 10px;
+    border: none;
+    background-color: yellow;
+    color: rgb(10, 10, 10);
+    border-radius: 4px;
+    position: absolute;
+    left: 502px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: rgb(255, 255, 209);
+  }
+  .dibujo {
+    height: 450px;
+    width: 200px;
+    background-color: rgb(242, 242, 252);
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .hola {
+    position: absolute;
+    left: 150px;
+    top: 150px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(41, 7, 121);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+  }
+  .conta, .dos, .tres, .cuatro, .cinco, .seis {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);
+    margin: 20px 0;
+  }
+  .input-file {
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .input-file input[type="file"] {
+    display: none;
+  }
+  .input-file label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .input-file label:hover {
+    background-color: #574848;
+  }
+  .input-file .file-name {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+  .form-group-nav {
+    background-color: yellow;
+    color: blue;
+    border-radius: 4px;
+  }
+
+  .i{
+    color: black;
+  }
+</style>
+</head>
+<body>
+<div class="iniciar">
+  <center>
+    <h1 style="color: white;">Crea tu cuenta en Castor</h1>
+    <h3 style="color: white;">Paso 6</h3>
+  </center>
+  <form>
+    <div class="form-group" style="margin-top: -40px;">
+      <label for="trabajo-informal"><h1>Selecciona opciones interesantes</h1></label>
+    </div>
+    <div class="form-group" style="margin-top: 20px;">
+        <label for="trabajo-informal-2">Trabajo informal:</label>
+        <select id="trabajo-informal-2" class="i">
+          <option value="">Seleccione un trabajo informal</option>
+          <option value="vendedor-ambulante">Vendedor ambulante</option>
+          <option value="cuidador-de-ninos">Cuidador de niños</option>
+          <option value="trabajador-agricola">Trabajador agrícola</option>
+          <option value="otros">Otros (especifique)</option>
+        </select>
+      </div>
+    <div class="form-group" style="margin-top: 20px; ">
+      <label for="trabajo-informal">Trabajo informal:</label>
+      <select id="trabajo-informal" class="i">
+        <option value="">Seleccione un trabajo informal</option>
+        <option value="vendedor-ambulante">Vendedor ambulante</option>
+        <option value="cuidador-de-ninos">Cuidador de niños</option>
+        <option value="trabajador-agricola">Trabajador agrícola</option>
+        <option value="otros">Otros (especifique)</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-top: 20px;">
+      <label for="trabajo-informal-2">Trabajo informal:</label>
+      <select id="trabajo-informal-2" class="i">
+        <option value="">Seleccione un trabajo informal</option>
+        <option value="vendedor-ambulante">Vendedor ambulante</option>
+        <option value="cuidador-de-ninos">Cuidador de niños</option>
+        <option value="trabajador-agricola">Trabajador agrícola</option>
+        <option value="otros">Otros (especifique)</option>
+      </select>
+    </div>
+    <div class="form-group" style="position: absolute; bottom: 20px; left: 20px;">
+      <a href="cinco.html" class="form-group-nav">Anterior</a>
+    </div>
+    <div class="form-group" style="position: absolute; bottom: 20px; right: 20px;">
+      <a href="verficacion.html" class="form-group-nav">Omitir</a>
+    </div>
+  </form>
+</div>
+<div class="dibujo">
+  <center>
+    <div class="conta"><a href="ingresar.html">1</a></div>
+    <div class="dos"><a href="ya hecha.html">2</a></div>
+    <div class="tres"><a href="1.html">3</a></div>
+    <div class="cuatro"><a href="cuatro.html">4</a></div>
+    <div class="cinco"><a href="cinco.html">5</a></div>
+    <div class="seis"><a href="#">6</a></div>
+  </center>
+</div>
+<div class="hola">
+  <img src="Captura_de_pantalla_2024-04-16_102818-removebg-preview.png" alt="Imagen" height="300px">
+</div>
+</body>
+</html>

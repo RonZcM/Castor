@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Castor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/castor_logo.png" rel="icon">
+  <link href="assets/img/castor_logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    /* Estilo personalizado para agrandar el formulario */
+    .login-card {
+      width: 400px;
+    }
+    .login-card h3 {
+      font-size: 1.8rem;
+    }
+    .form-control {
+      font-size: 1.1rem;
+      padding: 0.75rem;
+    }
+    .btn-primary {
+      font-size: 1.2rem;
+      padding: 0.75rem;
+    }
+    .errorMsg {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+  </style>
+</head>
+
+<body style="background-color: rgb(20, 20, 20);">
+
+
+  <!-- Main Section -->
+  <main class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; " >
+    <div class="row align-items-center justify-content-center w-100">
+      <div class="col-lg-6 d-flex justify-content-center">
+        <img src="img/2.png" alt="Imagen de ejemplo" class="img-fluid">
+      </div>
+      
+      <div class="col-lg-6 d-flex justify-content-center">
+        <div class="card p-4 login-card">
+          <h3 class="text-center mb-4">Iniciar Sesión</h3>
+          <form id="loginForm">
+            <!-- Campo de Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label" >Usuario</label>
+              <input type="text" class="form-control"id="nick" placeholder="Nombre de Usuario" required>
+            </div>
+            
+            <!-- Campo de Contraseña -->
+            <div class="mb-3">
+              <label for="password" class="form-label" >Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+              <p id="errorMsg" class="errorMsg"></p>
+            </div>
+            
+            <!-- Botón de Login -->
+            <div class="d-grid">
+              <button type="button" class="btn btn-primary"  onclick="iniciarSesion()">Iniciar Sesión</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+          // Función para iniciar sesión
+          function iniciarSesion() {
+              // Obtener valores del formulario
+              const nickInput = document.getElementById('nick').value.trim();
+              const passwordInput = document.getElementById('password').value.trim();
+              const errorMsg = document.getElementById('errorMsg');
+
+              // Obtener datos de registro del localStorage
+              const postulanteData = JSON.parse(localStorage.getItem('postulanteData'));
+              const contratistaData = JSON.parse(localStorage.getItem('contratistaData'));
+
+              
+              // Validar que no haya campos vacíos
+              if (nickInput == "" || passwordInput == "") {
+                  errorMsg.textContent = "Por favor, complete todos los campos.";
+              }
+
+              else {
+
+                // Verificar si los datos coinciden con los de un postulante
+              if (postulanteData && postulanteData.nick === nickInput && postulanteData.password === passwordInput) {
+                  // Redirigir al perfil de postulante si el login es exitoso
+                  window.location.href = "./vista_postulante/main.html";
+              } 
+              // Verificar si los datos coinciden con los de un contratista
+              else if (contratistaData && contratistaData.username === nickInput && contratistaData.password === passwordInput) {
+                  // Redirigir al perfil de contratista si el login es exitoso
+                  window.location.href = "./vista_contratista/main_post.html";
+              } 
+              else {
+                  // Mostrar mensaje de error si los datos no coinciden
+                  errorMsg.textContent = "Nombre de usuario o contraseña incorrectos.";
+              }
+
+              }
+
+              
+          }
+  </script>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

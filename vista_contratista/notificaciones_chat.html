@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Castor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/castor_logo.png" rel="icon">
+  <link href="assets/img/castor_logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+
+      .adaptando{
+
+        body {
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-side {
+  width: 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.left-side .job-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    }
+
+.left-column .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    }
+
+.right-side {
+  width: 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+/* Estilo general para las tarjetas de solicitudes */
+.card {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse; /* Invierte el orden de los elementos */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+/* Contenedor para la imagen y el tiempo en el lado derecho */
+.card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  flex-shrink: 0;
+  margin-left: 15px; /* Cambiado de margin-right a margin-left */
+}
+
+/* Imagen de perfil del postulante */
+.card img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 5px;
+}
+
+/* Estilo para el tiempo de postulación */
+.card-time {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  width: 100%;
+}
+
+/* Contenedor de la información del postulante */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 15px; /* Cambiado de padding-left a padding-right */
+  align-items: center;
+}
+
+/* Título del nombre del postulante */
+.card-header {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+/* Texto del mensaje */
+.card-message {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Botón "Ver perfil" */
+.card-button {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  align-self: center;
+}
+
+.card-button:hover {
+  background-color: #f0f0f0;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.message-box {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.message-content {
+  font-size: 14px;
+  color: #666;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+.navbar-inverse {
+        background-color:#162d50;
+    }
+    .chat-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .avatar {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .sent .message-content {
+            background-color: #f0f0f0;
+        }
+        .received .message-content {
+            background-color: #e0e0e0;
+        }
+        /* Estilos base */
+.input-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.boton{
+        background-color: #192f52;
+        color: white;
+    }
+      
+      }
+
+    </style>
+
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="main_post.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/castor_logo.png" alt="logo">
+        <!--<h1 class="sitename">Arsha</h1>-->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="./mis_publicaciones.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg-fill" viewBox="0 0 16 16" style="color: rgb(187, 179, 179) ; ">
+            <path d="M7 0a2 2 0 0 0-2 2H1.5A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14H2a.5.5 0 0 0 1 0h10a.5.5 0 0 0 1 0h.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2H11a2 2 0 0 0-2-2zM6 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zM3 13V3h1v10zm9 0V3h1v10z"/>
+          </svg>Mis Publicaciones</a></li>
+      <li><a href="./notificaciones.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" style="color:yellow;">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+      </svg>Notificaciones</a></li>
+      <li><a href="./perfil-contratista.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: red;">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      </svg>Perfil</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+        
+        <div class="adaptando">
+
+          <div class="container">
+            <div class="left-side">
+              <div class="section-title">Solicitudes Recibidas</div>
+          
+              <div class="card">
+                <div class="card-left">
+                    <img src="https://homesolution.net/pe/uploads/avatar/min/36452.jpg" alt="">
+                    <div class="card-time">Hace 1 día y 2 horas</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">Valentina Morales</div>
+                    <div class="card-message">Se ha postulado a tu oferta de "Decoradora de eventos".</div>
+                    <a href="notificaciones_chat.html" class="card-button">Abrir chat</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-left">
+                    <img src="https://homesolution.net/pe/uploads/avatar/min/36452.jpg" alt="">
+                    <div class="card-time">Hace 1 día y 5 horas</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">Diego Ramírez</div>
+                    <div class="card-message">Se ha postulado a tu oferta de "Técnico en aire acondicionado".</div>
+                    <a href="vista_contratista\notificaciones_chat.html" class="card-button">Abrir chat</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-left">
+                    <img src="https://homesolution.net/pe/uploads/avatar/min/36452.jpg" alt="">
+                    <div class="card-time">Hace 1 día y 8 horas</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">Isabella Martínez</div>
+                    <div class="card-message">Se ha postulado a tu oferta de "Limpieza profesional".</div>
+                    <a href="vista_contratista\notificaciones_chat.html" class="card-button">Abrir chat</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-left">
+                    <img src="https://homesolution.net/pe/uploads/avatar/min/36452.jpg" alt="">
+                    <div class="card-time">Hace 2 días</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">Andrés Gutiérrez</div>
+                    <div class="card-message">Se ha postulado a tu oferta de "Carpintero especializado".</div>
+                    <a href="vista_contratista\notificaciones_chat.html" class="card-button">Abrir chat</a>
+                </div>
+            </div>
+  
+              <div class="card">
+                <div class="card-left">
+                    <img src="https://homesolution.net/pe/uploads/avatar/min/36452.jpg" alt="">
+                    <div class="card-time">Hace 1 día</div>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">Roberto García</div>
+                    <div class="card-message">Se ha postulado a tu oferta de "Plomero certificado".</div>
+                    <a href="vista_contratista\notificaciones_chat.html" class="card-button">Abrir chat</a>
+                </div>
+            </div>
+            </div>
+          
+            <div class="right-side">
+              <div class="user-profile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNHBB78JvBuASEk28l95fUYOky6XqFFaZfQ&s" class="user-avatar">
+                <div class="user-name">Postulante emergente</div>
+              </div>
+          
+              <div class="message-box">
+               
+                <div class="chat-container">
+                  <div class="message sent">
+                      <img src="https://www.w3schools.com/bootstrap/img_avatar3.png" class="avatar" alt="Usuario">
+                      <div class="message-content">¡Habla con este postulante para aplicarlo a tu oferta de trabajo!</div>
+                  </div>
+                  <div class="input-container" style="position: absolute; bottom: 10px; width: 400px;">
+                    <input type="text" class="barra" id="messageInput" placeholder="Escribe un mensaje..." >
+                    <button class="boton" onclick="sendMessage()" style="width: 70px; ">Enviar</button>
+                  </div>
+              </div>
+                
+              </div>
+          
+             
+          
+            </div>
+          </div>
+
+        <script>
+          function sendMessage() {
+              // Obtener el mensaje del input
+              var messageInput = document.getElementById("messageInput");
+              var messageText = messageInput.value.trim();
+      
+              if (messageText === "") return;
+      
+              // Crear el mensaje enviado
+              var chatContainer = document.querySelector(".chat-container");
+              var messageDiv = document.createElement("div");
+              messageDiv.classList.add("message", "sent");
+              messageDiv.innerHTML = '<img src="https://www.w3schools.com/bootstrap/img_avatar3.png" class="avatar" alt="Usuario">' +
+                                     '<div class="message-content">' + messageText + '</div>';
+              chatContainer.appendChild(messageDiv);
+              messageInput.value = "";
+      
+              // Simular respuesta automática
+              setTimeout(function() {
+                  var responseDiv = document.createElement("div");
+                  responseDiv.classList.add("message", "received");
+                  responseDiv.innerHTML = '<img src="https://www.w3schools.com/bootstrap/img_avatar2.png" class="avatar" alt="Asistente">' +
+                                          '<div class="message-content">Hola</div>';
+                  chatContainer.appendChild(responseDiv);
+              }, 1000);
+          }
+      </script>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Castor</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Santa Ana, El Salvador</p>
+            <p><strong>Teléfono:</strong> <span>+503 2440 4348</span></p>
+            <p><strong>Email:</strong> <span>emprendetrabajo@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Enlaces Útiles</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#">Inicio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">Sobre Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Servicios</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#pricing">Precios</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Publicación de Trabajos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Búsqueda de Talento</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Promoción de Vacantes</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Consultoría Laboral</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Síguenos</h4>
+          <p>Sigue nuestras redes sociales para conocer las últimas novedades en el mercado laboral.</p>
+          <div class="social-links d-flex">
+            <a href="https://www.facebook.com/share/scq17BjHJqYov5G2/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/emprendetrabajo?igsh=MWZpajgyaDlza2tndg=="><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Derechos Reservados</span> <strong class="px-1 sitename">EmprendeTrabajo</strong></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Diseñado por <a href="https://dontvegaa.github.io/PaginaWeb-CodeHaters/">CodeHaters</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

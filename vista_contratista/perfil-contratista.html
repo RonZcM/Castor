@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Castor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/castor_logo.png" rel="icon">
+  <link href="assets/img/castor_logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+
+      .adaptando{
+
+        
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        
+
+        /* Contenedor de perfil */
+        #perfilContainer {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos de la foto de perfil */
+        .fotoPerfil {
+            display: block;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Datos de la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        th {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-danger {
+      background-color: #d60a1e;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #48be11;
+      color: white;
+    }
+      }
+
+    </style>
+
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="main_post.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/castor_logo.png" alt="logo">
+        <!--<h1 class="sitename">Arsha</h1>-->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="mis_publicaciones.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg-fill" viewBox="0 0 16 16" style="color: rgb(187, 179, 179) ; ">
+            <path d="M7 0a2 2 0 0 0-2 2H1.5A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14H2a.5.5 0 0 0 1 0h10a.5.5 0 0 0 1 0h.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2H11a2 2 0 0 0-2-2zM6 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zM3 13V3h1v10zm9 0V3h1v10z"/>
+          </svg>Mis Publicaciones</a></li>
+      <li><a href="notificaciones.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" style="color:yellow;">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+      </svg>Notificaciones</a></li>
+      <li><a href="perfil-contratista.html" style="text-indent: 8px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: red;">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      </svg>Perfil</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+      <div class="container" data-aos="fade-up"> <!-- Esto es para centrar el contenido -->
+        
+        <div class="adaptando">
+
+          <div id="perfilContainer">
+            <h2>Mi Perfil - Contratista</h2>
+            <img id="fotoPerfil" class="fotoPerfil" src="" alt="Foto de Perfil">
+
+            <table>
+              <tr>
+                  <th>Usuario:</th>
+                  <td id="usuario"></td>
+              </tr>
+              <tr>
+                  <th>Nombre Completo:</th>
+                  <td id="nombreCompleto"></td>
+              </tr>
+              <tr>
+                  <th>Empresa/Negocio:</th>
+                  <td id="nombreEmpresa"></td>
+              </tr>
+              <tr>
+                <th>Descripción:</th>
+                <td id="descripcion"></td>
+              </tr>
+              <tr>
+                  <th>Área Laboral:</th>
+                  <td id="areaLaboral"></td>
+              </tr>
+              <tr>
+                  <th>Dirección:</th>
+                  <td id="direccion"></td>
+              </tr>
+              <tr>
+                  <th>Razón Social:</th>
+                  <td id="razonSocial"></td>
+              </tr>
+              <tr>
+                  <th>Código Postal:</th>
+                  <td id="codigoPostal"></td>
+              </tr>
+          </table>
+
+           <!-- Botones de Cerrar Sesión y Borrar Cuenta -->
+            <button id="logoutBtn" onclick="cerrarSesion()" class="btn btn-warning" style="color: white;">Cerrar Sesión</button>
+            <button id="deleteAccountBtn" onclick="mostrarModal()" class="btn btn-danger">Borrar Cuenta</button>
+          </div>
+
+          <!-- Modal de confirmación -->
+          <div id="confirmModal" class="modal">
+            <div class="modal-content">
+              <p>¿Estás seguro de borrar tu cuenta de forma permanente?</p>
+              <div class="modal-buttons">
+                <button id="confirmYes" class="btn btn-danger" onclick="borrarCuenta()">Sí</button>
+                <button id="confirmNo" class="btn btn-secondary" onclick="cerrarModal()">No</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    
+        <script>
+
+                    // Función para cerrar sesión
+              function cerrarSesion() {
+                // Redirige al usuario a la página de inicio
+                window.location.href = "../index.html";
+              }
+
+              // Función para mostrar el modal de confirmación
+              function mostrarModal() {
+                document.getElementById("confirmModal").style.display = "flex";
+              }
+
+              // Función para cerrar el modal de confirmación
+              function cerrarModal() {
+                document.getElementById("confirmModal").style.display = "none";
+              }
+
+              // Función para borrar la cuenta
+              function borrarCuenta() {
+                // Verifica el tipo de perfil actual y elimina los datos correspondientes
+                const contratistaData = JSON.parse(localStorage.getItem('contratistaData'));
+
+                // Elimina los datos según el tipo de perfil
+                if (contratistaData) {
+                  localStorage.removeItem('contratistaData');
+                }
+
+                // Redirige al usuario a la página de inicio después de borrar los datos
+                alert("Cuenta eliminada exitosamente.");
+                window.location.href = "../index.html";
+              }
+  
+
+            // Función para cargar los datos del contratista
+            function cargarDatosContratista() {
+                const datosContratista = JSON.parse(localStorage.getItem('contratistaData'));
+                if (datosContratista) {
+                    // Asignar los valores a los elementos del perfil
+                    document.getElementById('usuario').textContent = datosContratista.username;
+                    document.getElementById('nombreCompleto').textContent = datosContratista.nombreCompleto;
+                    document.getElementById('nombreEmpresa').textContent = datosContratista.nombreEmpresa;
+                    document.getElementById('descripcion').textContent = datosContratista.descripcion;
+                    document.getElementById('areaLaboral').textContent = datosContratista.areaLaboral;
+                    document.getElementById('direccion').textContent = datosContratista.direccion;
+                    document.getElementById('razonSocial').textContent = datosContratista.razonSocial;
+                    document.getElementById('codigoPostal').textContent = datosContratista.codigoPostal;
+                    document.getElementById('fotoPerfil').src = datosContratista.fotoPerfil;
+                } else {
+                    alert("No se encontraron datos de perfil de contratista. Regístrese primero.");
+                    window.location.href = "registro-contratista.html"; // Redirige a la página de registro si no hay datos
+                }
+            }
+    
+            // Llamar a la función al cargar la página
+            window.onload = cargarDatosContratista;
+        </script>
+        </div>
+
+      </div>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="../index.html" class="d-flex align-items-center">
+            <span class="sitename">Castor</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Santa Ana, El Salvador</p>
+            <p><strong>Teléfono:</strong> <span>+503 2440 4348</span></p>
+            <p><strong>Email:</strong> <span>emprendetrabajo@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Enlaces Útiles</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#">Inicio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">Sobre Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Servicios</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#pricing">Precios</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Publicación de Trabajos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Búsqueda de Talento</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Promoción de Vacantes</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#services">Consultoría Laboral</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Síguenos</h4>
+          <p>Sigue nuestras redes sociales para conocer las últimas novedades en el mercado laboral.</p>
+          <div class="social-links d-flex">
+            <a href="https://www.facebook.com/share/scq17BjHJqYov5G2/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/emprendetrabajo?igsh=MWZpajgyaDlza2tndg=="><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Derechos Reservados</span> <strong class="px-1 sitename">EmprendeTrabajo</strong></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Diseñado por <a href="https://dontvegaa.github.io/PaginaWeb-CodeHaters/">CodeHaters</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

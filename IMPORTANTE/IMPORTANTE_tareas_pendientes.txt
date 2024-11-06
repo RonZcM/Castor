@@ -1,0 +1,14 @@
+Se necesita hacer version del sitio desde el punto de vista de un "contratista"
+
+Seguir los siguientes puntos:
+
+-Trabajar en la carpeta "contratista"
+
+-Adaptar el contenido de las paginas a un contexto orientado a contratista
+(en perfil, notificaciones etc)
+
+-Modificar la pagina "main", para que en vez de buscar un trabajo, te permita "Crear Publicacion" (así como facebook)
+
+Notas:
+En la carpeta hay un archivo de "plantilla" por si se desea hacer algo desde 0, (añades estilo en la línea 34, y codigo en línea79) copia y pega el archivo renombrandolo según para que lo vayas a ocupar...
+

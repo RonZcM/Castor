@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Registro</title>
+<link rel="icon" type="image/png" href="2.png">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #333; 
+    color: #fff; 
+    margin: 0;
+    padding: 20px;
+  }
+  .iniciar {
+    background-color: rgb(7, 8, 97);
+    height: 500px;
+    width: 700px;
+    position: absolute;
+    left: 620px;
+    top: 50px;
+  }
+  select {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 150px;
+    top: 110px;
+  }
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  label {
+    width: 150px;
+    margin-right: 10px;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #fff; /* Borde blanco */
+    background-color: transparent; /* Fondo transparente */
+    color: #fff; /* Texto blanco */
+    border-radius: 4px;
+    width: 100%;
+  }
+  input[type="submit"] {
+    width: 25%;
+    padding: 10px;
+    border: none;
+    background-color:yellow ; /* Botón verde */
+    color: rgb(10, 10, 10);
+    border-radius: 4px;
+    position: absolute;
+    left: 502px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: rgb(255, 255, 209);
+  }
+  .dibujo{
+    height:475px;
+    width: 200px;
+    background-color: rgb(242, 242, 252);
+    position: absolute;
+    left: 300px;
+    top: 100px;
+ 
+  }
+  .hola{
+    position: absolute;
+    left: 150px;
+    top: 150px;
+  }
+
+  a{
+    text-decoration: none;
+   color: white;
+  }
+
+  .conta{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);
+  }
+  .dos{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);
+  }
+  .tres{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);
+  }
+  .cuatro{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);    
+  }
+
+  .cinco{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);
+  }
+  .input-file {
+      display: block;
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-file input[type="file"] {
+      display: none;
+    }
+
+    .input-file label {
+      display: block;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .input-file label:hover {
+      background-color: #e0e0e0;
+    }
+
+    .input-file .file-name {
+      margin-left: 10px;
+      font-size: 16px;
+      color: #666;
+    }
+    .seis{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(7, 8, 97);
+  }
+  
+</style>
+</head>
+<body>
+<div class="iniciar">
+  <center>
+    <h1 style="color: white;">Crea tu cuenta en Castor</h1>
+    <h3 style="color: white;">Paso 5</h3>
+  </center>
+ 
+ 
+  
+  <form >
+    <center><label for="nombre"><h1>sube la hoja de vida</h1></label>
+    </center>
+ 
+    <div style="position: absolute; top: 200px; left: 220px;">
+      <div  style="background-color: midnightblue;">
+      <div class="input-file">
+        <input type="file" id="file" />
+        <label for="file">Elegir archivos</label>
+       
+      </div></div>
+      
+    
+      
+    </div>
+
+    <br>
+      <br>
+    <br>
+   
+  <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <div class="bottom" style="position: absolute; left: 70px;">
+      <a style="height: 30px; width: 20px; background-color: yellow; color: rgb(7, 8, 97); padding: 10px;" href="cuatro.html"> anterior</a>
+    </div>
+    <div class="bottom" style="position: absolute; left: 500px;">
+      <a  style="height: 30px; width: 20px; background-color: yellow; color: rgb(7, 8, 97); padding: 10px;" href="seis.html" > siguiente</a>
+    </div>
+    
+  </form>
+</div>
+<div class="dibujo">
+    <br>
+   <center><div class="conta"><a href="ingresar.html">1</a></div>
+    <br>
+    <br>
+    <div class="dos"><a href="ya hecha.html">2</a></div>
+    <br>
+    <br>
+   <div class="tres"> <a href="1.html">3</a></div>
+    <br>
+    <br>
+    <div class="cuatro"><a href="cuatro.html">4</a></div>
+    <br>
+    <br>
+    <div class="cinco"><a href="cinco.html">5</a></div>
+    <br>
+    <br>
+    <div class="seis"><a href="seis.html">6</a></div></center>
+</div>
+<div class="hola"> 
+    
+    <img src="Captura_de_pantalla_2024-04-16_102818-removebg-preview.png" alt="" height="300px">
+
+</div>
+</body>
+<script>
+  const fileInput = document.getElementById('file');
+  const fileName = document.querySelector('.file-name');
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    fileName.textContent = file.name;
+  });
+</script>
+
+ 
+
+</html>

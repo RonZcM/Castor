@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Castor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/castor_logo.png" rel="icon">
+  <link href="assets/img/castor_logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+
+      body{
+            background-color: #090180;
+          }
+      .adaptando{   
+        
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 5%;
+        }
+
+        /* Contenedor de registro */
+        #registroContainer {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 10%;
+        }
+
+
+        /* Campos de entrada */
+        input[type="text"], input[type="password"], input[type="file"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #555;
+        }
+
+        /* Botón de registro */
+        .registerBtn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .registerBtn:hover {
+            background-color: #45a049;
+        }
+
+        /* Mensaje de error */
+        .errorMsg {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        }
+
+    </style>
+
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" style="background-color: transparent;" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/castor_logo.png" alt="logo">
+        <!--<h1 class="sitename">Arsha</h1>-->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+
+      <div class="container" data-aos="fade-up"> <!-- Esto es para centrar el contenido -->
+        
+        <div class="adaptando">
+
+          <h1>Registro de Contratista</h1>
+
+          <div id="registroContainer">
+            
+            <form id="contratistaForm">
+                <label>Nombre de Usuario:</label>
+                <input type="text" id="username" required>
+
+                <label>Nombre Completo:</label>
+                <input type="text" id="nombreCompleto"  required>
+
+                <label>Nombre de Empresa/Negocio:</label>
+                <input type="text" id="nombreEmpresa"  required>
+
+                <label>Descripción:</label>
+                <textarea id="descripcion" required rows="3"></textarea>
+                
+                <label>Área laboral:</label>
+                <select id="areaLaboral" required>
+                    <option value="">Seleccione un área</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Construcción">Construcción</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Finanzas">Finanzas</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Otros">Otros</option>
+                </select>
+
+                <label>Dirección:</label>
+                <input type="text" id="direccion"  required>
+
+                <label>Razón Social:</label>
+                <input type="text" id="razonSocial" required>
+
+                <label>Código Postal:</label>
+                <input type="text" id="codigoPostal" required>
+                
+                <label>Foto de Perfil</label>
+                <input type="file" id="fotoPerfil" accept="image/*" required>
+    
+                <label>Contraseña:</label>
+                <input type="password" id="password" required>
+
+                <label>Confirmar Contraseña:</label>
+                <input type="password" id="confirmPassword" required>
+                
+                <button type="button" class="registerBtn" onclick="registrarContratista()">Registrar</button>
+                <p id="errorMsg" class="errorMsg"></p>
+            </form>
+        </div>
+    
+        <script>
+            // Función para registrar el contratista
+            function registrarContratista() {
+                // Obtener valores de los campos
+                const username = document.getElementById('username').value.trim();
+                const nombreCompleto = document.getElementById('nombreCompleto').value.trim();
+                const nombreEmpresa = document.getElementById('nombreEmpresa').value.trim();
+                const descripcion = document.getElementById('descripcion').value.trim();
+                const areaLaboral = document.getElementById('areaLaboral').value;
+                const direccion = document.getElementById('direccion').value.trim();
+                const razonSocial = document.getElementById('razonSocial').value.trim();
+                const codigoPostal = document.getElementById('codigoPostal').value.trim();
+                const fotoPerfil = document.getElementById('fotoPerfil').files[0];
+                const password = document.getElementById('password').value.trim();
+                const confirmPassword = document.getElementById('confirmPassword').value.trim();
+                const errorMsg = document.getElementById('errorMsg');
+    
+                // Validar que no haya campos vacíos
+                if (!username || !nombreCompleto || !nombreEmpresa || !areaLaboral || !direccion || !razonSocial || !codigoPostal || !fotoPerfil || !password || !confirmPassword) {
+                    errorMsg.textContent = "Por favor, complete todos los campos.";
+                    return;
+                }
+    
+                // Validar que las contraseñas coincidan
+                if (password !== confirmPassword) {
+                    errorMsg.textContent = "Las contraseñas no coinciden.";
+                    return;
+                }
+    
+                // Crear un objeto para guardar los datos
+                const contratistaData = {
+                    username,
+                    nombreCompleto,
+                    nombreEmpresa,
+                    descripcion,
+                    areaLaboral,
+                    direccion,
+                    razonSocial,
+                    codigoPostal,
+                    password
+                };
+    
+                // Guardar la imagen de perfil en base64
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    contratistaData.fotoPerfil = e.target.result;
+    
+                    // Guardar datos en localStorage
+                    localStorage.setItem('contratistaData', JSON.stringify(contratistaData));
+    
+                    // Confirmación y redirección
+                    alert("Registro exitoso. ¡Bienvenido!");
+                    window.location.href = "./vista_contratista/main_post.html"; // Redirige a la página de perfil
+                };
+                reader.readAsDataURL(fotoPerfil);
+            }
+        </script>
+        </div>
+
+      </div>
+
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Castor</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Santa Ana, El Salvador</p>
+            <p><strong>Teléfono:</strong> <span>+503 2440 4348</span></p>
+            <p><strong>Email:</strong> <span>emprendetrabajo@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Enlaces Útiles</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#">Inicio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">Sobre Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Servicios</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#pricing">Precios</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Publicación de Trabajos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Búsqueda de Talento</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Promoción de Vacantes</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Consultoría Laboral</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Síguenos</h4>
+          <p>Sigue nuestras redes sociales para conocer las últimas novedades en el mercado laboral.</p>
+          <div class="social-links d-flex">
+            <a href="https://www.facebook.com/share/scq17BjHJqYov5G2/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/emprendetrabajo?igsh=MWZpajgyaDlza2tndg=="><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Derechos Reservados</span> <strong class="px-1 sitename">EmprendeTrabajo</strong></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Diseñado por <a href="https://dontvegaa.github.io/PaginaWeb-CodeHaters/">CodeHaters</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

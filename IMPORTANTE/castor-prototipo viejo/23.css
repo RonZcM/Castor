@@ -1,0 +1,55 @@
+*{ 
+    border: 0px;
+}
+
+div {
+    background-color: rgb(148, 146, 146);
+    padding: 10px;
+}
+
+
+li,a {
+
+    display: inline-block;
+}
+
+
+a:link, a:visited {
+    font-size: 30px;
+  color: rgb(255, 255, 255);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  background-color: rgb(0, 0, 0);
+  font-size: 40px;
+}
+
+body{
+    background-color: rgb(255, 254, 254);
+}
+
+h1{
+    color: rgb(146, 142, 142);
+    text-align: center  ;
+    font: 40px cursive;
+}
+
+h4{
+    color: rgb(146, 142, 142);
+    text-align: center;
+}
+
+
+p{
+color: rgb(0, 0, 0);
+font-size: 40px ;
+}
+ 
+table{
+    border: 1px;
+    border-color: black;
+}
+
